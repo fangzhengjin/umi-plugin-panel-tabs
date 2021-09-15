@@ -1,7 +1,7 @@
 {
   "name": "umi-plugin-panel-tabs",
   "main": "lib/index.js",
-  "repository": "/umi-plugin-panel-tabs",
+  "repository": "https://github.com/fangzhengjin/umi-plugin-panel-tabs",
   "scripts": {
     "start": "cross-env APP_ROOT=example umi dev",
     "build": "father-build",
