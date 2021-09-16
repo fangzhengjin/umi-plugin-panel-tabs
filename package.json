@@ -33,12 +33,10 @@
   "files": [
     "lib"
   ],
-  "peerDependencies": {
-    "umi-plugin-keep-alive": "^0.0.1-beta.29"
-  },
   "dependencies": {
     "@umijs/plugin-antd": "^0.11.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "umi-plugin-keep-alive": "^0.0.1-beta.29"
   },
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
