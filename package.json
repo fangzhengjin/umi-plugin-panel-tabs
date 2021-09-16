@@ -40,5 +40,5 @@
     "@umijs/plugin-antd": "^0.11.0",
     "path": "^0.12.7"
   },
-  "version": "0.0.7-3-SNAPSHOT"
+  "version": "0.0.7-4-SNAPSHOT"
 }
