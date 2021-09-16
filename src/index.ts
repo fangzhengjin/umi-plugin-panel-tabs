@@ -14,21 +14,29 @@ const add404 = (routes: IRoute[]) =>
     wrappers: ['@@/plugin-panel-tabs/Wrappers/PanelTabsWrapper'],
   });
 
+const generatorWrappers = (useAuth: boolean) => {
+  if (useAuth) {
+    return ['@@/plugin-panel-tabs/Wrappers/PanelTabsAndRouteAuthWrapper'];
+  }
+  return ['@@/plugin-panel-tabs/Wrappers/PanelTabsWrapper'];
+};
+
 const modifyRoutes = (
   routes: IRoute[],
   topRoute: boolean,
-  use404: boolean = false,
+  use404: boolean,
+  useAuth: boolean,
 ) => {
   routes.forEach((x) => {
-    if (x.noUsePanelTab !== true && x.name) {
+    if (x.hideInPanelTab !== true && x.name) {
       if (x.wrappers && x.wrappers.length > 0) {
-        x.wrappers.push('@@/plugin-panel-tabs/Wrappers/PanelTabsWrapper');
+        x.wrappers.push(...generatorWrappers(useAuth));
       } else {
-        x.wrappers = ['@@/plugin-panel-tabs/Wrappers/PanelTabsWrapper'];
+        x.wrappers = generatorWrappers(useAuth);
       }
     }
     if (x.routes) {
-      x.routes = modifyRoutes(x.routes, false, use404);
+      x.routes = modifyRoutes(x.routes, false, use404, useAuth);
     }
   });
   if (!topRoute) {
@@ -45,11 +53,12 @@ export default function (api: IApi) {
     config: {
       default: {
         use404: true,
+        useAuth: false,
       },
       schema(joi) {
         return joi.object({
-          use403: joi.boolean(),
           use404: joi.boolean(),
+          useAuth: joi.boolean(),
         });
       },
       onChange: api.ConfigChangeType.regenerateTmpFiles,
@@ -70,7 +79,12 @@ export default function (api: IApi) {
     ];
   });
   api.modifyRoutes((routes: IRoute[]) =>
-    modifyRoutes(_.clone(routes), true, api.config.panelTab.use404),
+    modifyRoutes(
+      _.clone(routes),
+      true,
+      api.config.panelTab.use404,
+      api.config.panelTab.useAuth,
+    ),
   );
   api.addUmiExports(() => [
     {
@@ -115,6 +129,26 @@ export default function (api: IApi) {
       content: utils.Mustache.render(
         readFileSync(
           join(__dirname, 'Wrappers', 'PanelTabsWrapper.tsx.tpl'),
+          'utf-8',
+        ),
+        {},
+      ),
+    });
+    api.writeTmpFile({
+      path: 'plugin-panel-tabs/Wrappers/PanelTabsAndRouteAuthWrapper.tsx',
+      content: utils.Mustache.render(
+        readFileSync(
+          join(__dirname, 'Wrappers', 'PanelTabsAndRouteAuthWrapper.tsx.tpl'),
+          'utf-8',
+        ),
+        {},
+      ),
+    });
+    api.writeTmpFile({
+      path: 'plugin-panel-tabs/Wrappers/RouteAuthWrapper.tsx',
+      content: utils.Mustache.render(
+        readFileSync(
+          join(__dirname, 'Wrappers', 'RouteAuthWrapper.tsx.tpl'),
           'utf-8',
         ),
         {},

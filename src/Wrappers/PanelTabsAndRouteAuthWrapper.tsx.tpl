@@ -4,12 +4,13 @@ import { useAccess } from '@@/plugin-access/access';
 import type { IBestAFSRoute } from '@umijs/plugin-layout';
 import { PanelTabsWrapper } from '@@/plugin-panel-tabs';
 import { Button, Result } from 'antd';
-import { history } from '@@/core/history';
+import { history, usePanelTab } from 'umi';
 
 const PanelTabsAndRouteAuthWrapper: FC<{ route: IBestAFSRoute; children: React.ReactNode }> = ({
   route,
   children,
 }) => {
+  const { closeCurrent } = usePanelTab();
   const access = useAccess();
   let renderContent = children;
 
@@ -20,8 +21,8 @@ const PanelTabsAndRouteAuthWrapper: FC<{ route: IBestAFSRoute; children: React.R
         title="403"
         subTitle="抱歉，你无权访问该页面"
         extra={
-          <Button type="primary" onClick={() => history.push('/')}>
-            返回首页
+          <Button type="primary" onClick={closeCurrent}>
+            关闭页面
           </Button>
         }
       />
