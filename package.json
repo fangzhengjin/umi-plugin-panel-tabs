@@ -41,5 +41,5 @@
     "react-router-config": "^5.1.1",
     "umi-plugin-keep-alive": "^0.0.1-beta.29"
   },
-  "version": "0.0.9-1-SNAPSHOT"
+  "version": "0.0.9-2-SNAPSHOT"
 }
