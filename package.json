@@ -18,19 +18,19 @@
     ]
   },
   "dependencies": {
-    "path": "^0.12.7"
+    "@umijs/plugin-antd": "^0.11.0",
+    "path": "^0.12.7",
+    "umi-plugin-keep-alive": "^0.0.1-beta.29"
   },
   "devDependencies": {
     "@types/node": "^16.7.12",
-    "@umijs/plugin-antd": "^0.11.0",
     "babel-plugin-import": "^1.13.3",
     "cross-env": "^7.0.3",
     "father-build": "^1.20.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "typescript": "^4.4.2",
-    "umi": "^3.5.17",
-    "umi-plugin-keep-alive": "^0.0.1-beta.29"
+    "umi": "^3.5.17"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -38,5 +38,5 @@
   "files": [
     "lib"
   ],
-  "version": "0.0.9-3-SNAPSHOT"
+  "version": "0.0.9-4-SNAPSHOT"
 }
