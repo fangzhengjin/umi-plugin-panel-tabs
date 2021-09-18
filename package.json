@@ -35,8 +35,11 @@
   ],
   "dependencies": {
     "@umijs/plugin-antd": "^0.11.0",
+    "@umijs/renderer-react": "^3.5.19",
     "path": "^0.12.7",
+    "react-activation": "^0.9.4",
+    "react-router-config": "^5.1.1",
     "umi-plugin-keep-alive": "^0.0.1-beta.29"
   },
-  "version": "0.0.8"
+  "version": "0.0.9-1-SNAPSHOT"
 }
