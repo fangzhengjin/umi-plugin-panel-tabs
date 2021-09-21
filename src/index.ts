@@ -66,18 +66,6 @@ export default function (api: IApi) {
     enableBy: api.EnableBy.register,
   });
 
-  api.addDepInfo(() => {
-    const pkg = require('../package.json');
-    return [
-      {
-        name: 'umi-plugin-keep-alive',
-        range:
-          api.pkg.dependencies?.['umi-plugin-keep-alive'] ||
-          api.pkg.devDependencies?.['umi-plugin-keep-alive'] ||
-          pkg.peerDependencies['umi-plugin-keep-alive'],
-      },
-    ];
-  });
   api.modifyRoutes((routes: IRoute[]) =>
     modifyRoutes(
       _.clone(routes),
@@ -162,4 +150,24 @@ export default function (api: IApi) {
       ),
     });
   });
+
+  const registerPlugins = [];
+
+  if (!api.hasPlugins(['umi-plugin-keep-alive'])) {
+    registerPlugins.push(require.resolve('umi-plugin-keep-alive'));
+  }
+
+  if (!api.hasPlugins(['@umijs/plugin-antd'])) {
+    registerPlugins.push(require.resolve('@umijs/plugin-antd'));
+  }
+
+  if (registerPlugins.length > 0) {
+    api.registerPlugins(registerPlugins);
+  }
+  return {
+    plugins: [
+      require.resolve('umi-plugin-keep-alive'),
+      require.resolve('@umijs/plugin-antd'),
+    ],
+  };
 }
