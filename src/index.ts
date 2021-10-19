@@ -54,11 +54,19 @@ export default function (api: IApi) {
       default: {
         use404: true,
         useAuth: false,
+        tabsLimit: 10,
+        tabsLimitWait: 500,
+        tabsLimitWarnTitle: '提示',
+        tabsLimitWarnContent: '您当前打开页面过多, 请关闭不使用的页面以减少卡顿!',
       },
       schema(joi) {
         return joi.object({
           use404: joi.boolean(),
           useAuth: joi.boolean(),
+          tabsLimit: joi.number(),
+          tabsLimitWait: joi.number(),
+          tabsLimitWarnTitle: joi.number(),
+          tabsLimitWarnContent: joi.number(),
         });
       },
       onChange: api.ConfigChangeType.regenerateTmpFiles,

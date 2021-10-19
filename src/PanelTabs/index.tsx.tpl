@@ -1,31 +1,73 @@
 {{=<% %>=}}
-import React from 'react';
+import React, { useContext, useRef } from 'react';
 import type { FC } from 'react';
 // @ts-ignore
 import { useAliveController } from 'react-activation';
 import PanelTab from './PanelTab';
+import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
+import { Space } from 'antd';
+import { RouteContext } from '@ant-design/pro-layout';
 
 const PanelTabs: FC = () => {
   const { getCachingNodes } = useAliveController();
   const cachingNodes = getCachingNodes();
+  const routeContext = useContext(RouteContext);
+  const scrollContainer = useRef<HTMLDivElement>();
 
   return (
     <div
       style={{
-        backgroundColor: 'white',
         width: '100%',
-        position: 'fixed',
-        height: 'auto',
-        zIndex: 9,
-        borderTop: '1px solid #d8dce5',
-        borderBottom: '1px solid #d8dce5',
-        boxShadow: '0 1px 3px 0 rgba(0,0,0,.12),0 0 3px 0 rgba(0,0,0,.04)',
-        padding: '0 0 5px 5px',
+        height: '38px',
+        backgroundColor: '#FFFFFF',
+        borderTop: '1px solid rgb(216, 220, 229)',
+        borderBottom: '1px solid rgb(216, 220, 229)',
+        boxShadow: '0 1px 3px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 4%)',
       }}
     >
-      {cachingNodes.map((node, idx) => (
-        <PanelTab key={idx} node={node} />
-      ))}
+      <style>{`
+.panelTabsBar {
+  width: calc(100% - ${routeContext.siderWidth}px);
+  position: fixed;
+  height: 38px;
+  display: flex;
+  overflow-x: scroll;
+  padding: 0 50px 5px 5px;
+}
+.panelTabsBar::-webkit-scrollbar {
+  display: none;
+}
+  `}</style>
+      <div className="panelTabsBar" ref={scrollContainer}>
+        {cachingNodes.map((node, idx) => (
+          <PanelTab key={idx} node={node} />
+        ))}
+        <Space
+          style={{
+            backgroundColor: '#FFFFFF',
+            position: 'fixed',
+            right: 0,
+            paddingRight: '5px',
+            height: '35px',
+            textAlign: 'center',
+            lineHeight: '30px',
+            fontSize: '18px',
+          }}
+        >
+          <CaretLeftOutlined
+            style={{ display: 'inline-block', cursor: 'pointer' }}
+            onClick={() =>
+              (scrollContainer.current.scrollLeft = scrollContainer.current.scrollLeft - 100)
+            }
+          />
+          <CaretRightOutlined
+            style={{ display: 'inline-block', cursor: 'pointer' }}
+            onClick={() =>
+              (scrollContainer.current.scrollLeft = scrollContainer.current.scrollLeft + 100)
+            }
+          />
+        </Space>
+      </div>
     </div>
   );
 };
