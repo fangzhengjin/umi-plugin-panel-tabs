@@ -57,7 +57,8 @@ export default function (api: IApi) {
         tabsLimit: 10,
         tabsLimitWait: 500,
         tabsLimitWarnTitle: '提示',
-        tabsLimitWarnContent: '您当前打开页面过多, 请关闭不使用的页面以减少卡顿!',
+        tabsLimitWarnContent:
+          '您当前打开页面过多, 请关闭不使用的页面以减少卡顿!',
       },
       schema(joi) {
         return joi.object({
@@ -127,7 +128,9 @@ export default function (api: IApi) {
           join(__dirname, 'Wrappers', 'PanelTabsWrapper.tsx.tpl'),
           'utf-8',
         ),
-        {},
+        {
+          ...api.config.panelTab,
+        },
       ),
     });
     api.writeTmpFile({

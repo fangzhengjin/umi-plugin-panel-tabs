@@ -19,14 +19,14 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
   const useDebounce = useDebounceFn(
     () =>
       Modal.warn({
-        title: '{{context.config.panelTab.tabsLimitWarnTitle}}',
-        content: '{{context.config.panelTab.tabsLimitWarnContent}}',
+        title: '{{{ tabsLimitWarnTitle }}}',
+        content: '{{{ tabsLimitWarnContent }}}',
       }),
-    { wait: <%= context.config.panelTab.tabsLimitWait %> },
+    { wait: {{{ tabsLimitWait }}} },
   );
 
   useEffect(() => {
-    if (cachingNodes.length > {{context.config.panelTab.tabsLimit}}) {
+    if (cachingNodes.length > {{{ tabsLimit }}}) {
       useDebounce.run();
     }
   }, [cachingNodes]);
