@@ -102,6 +102,8 @@ export default function (api: IApi) {
       content: utils.Mustache.render(
         readFileSync(join(__dirname, 'PanelTabs', 'index.tsx.tpl'), 'utf-8'),
         {},
+        {},
+        ['{{{', '}}}'],
       ),
     });
     api.writeTmpFile({
@@ -109,6 +111,8 @@ export default function (api: IApi) {
       content: utils.Mustache.render(
         readFileSync(join(__dirname, 'PanelTabs', 'PanelTab.tsx.tpl'), 'utf-8'),
         {},
+        {},
+        ['{{{', '}}}'],
       ),
     });
     api.writeTmpFile({
@@ -131,6 +135,8 @@ export default function (api: IApi) {
         {
           ...api.config.panelTab,
         },
+        {},
+        ['{{{', '}}}'],
       ),
     });
     api.writeTmpFile({

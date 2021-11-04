@@ -1,4 +1,3 @@
-{{=<% %>=}}
 import React, { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'umi';
 // @ts-ignore
@@ -104,4 +103,3 @@ const PanelTab: React.FC<{ node: CachingNode }> = ({ node }) => {
 };
 
 export default PanelTab;
-<%={{ }}=%>

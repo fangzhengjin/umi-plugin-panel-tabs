@@ -35,9 +35,7 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
     <>
       <PanelTabs />
       <KeepAlive name={route.name} location={history.location} saveScrollPosition="screen">
-{{=<% %>=}}
-        <div style={{ marginTop: 50 }}>{children}</div>
-<%={{ }}=%>
+        <div style={{ marginTop: 60 }}>{children}</div>
       </KeepAlive>
     </>
   );

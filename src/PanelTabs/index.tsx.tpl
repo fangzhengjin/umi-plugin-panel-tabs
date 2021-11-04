@@ -1,4 +1,3 @@
-{{=<% %>=}}
 import React, { useContext, useRef } from 'react';
 import type { FC } from 'react';
 // @ts-ignore
@@ -17,6 +16,8 @@ const PanelTabs: FC = () => {
   return (
     <div
       style={{
+        position: 'fixed',
+        zIndex: 9,
         width: '100%',
         height: '38px',
         backgroundColor: '#FFFFFF',
@@ -73,4 +74,3 @@ const PanelTabs: FC = () => {
 };
 
 export default PanelTabs;
-<%={{ }}=%>
