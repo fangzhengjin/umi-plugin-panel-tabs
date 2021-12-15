@@ -54,6 +54,7 @@ export default function (api: IApi) {
       default: {
         use404: true,
         useAuth: false,
+        autoI18n: true,
         tabsLimit: 10,
         tabsLimitWait: 500,
         tabsLimitWarnTitle: '提示',
@@ -64,10 +65,11 @@ export default function (api: IApi) {
         return joi.object({
           use404: joi.boolean(),
           useAuth: joi.boolean(),
+          autoI18n: joi.boolean(),
           tabsLimit: joi.number(),
           tabsLimitWait: joi.number(),
-          tabsLimitWarnTitle: joi.number(),
-          tabsLimitWarnContent: joi.number(),
+          tabsLimitWarnTitle: joi.string(),
+          tabsLimitWarnContent: joi.string(),
         });
       },
       onChange: api.ConfigChangeType.regenerateTmpFiles,
@@ -101,7 +103,10 @@ export default function (api: IApi) {
       path: 'plugin-panel-tabs/PanelTabs/index.tsx',
       content: utils.Mustache.render(
         readFileSync(join(__dirname, 'PanelTabs', 'index.tsx.tpl'), 'utf-8'),
-        {},
+        {
+          // test: console.log(JSON.stringify(api)),
+          useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
+        },
         {},
         ['{{{', '}}}'],
       ),
@@ -110,7 +115,9 @@ export default function (api: IApi) {
       path: 'plugin-panel-tabs/PanelTabs/PanelTab.tsx',
       content: utils.Mustache.render(
         readFileSync(join(__dirname, 'PanelTabs', 'PanelTab.tsx.tpl'), 'utf-8'),
-        {},
+        {
+          useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
+        },
         {},
         ['{{{', '}}}'],
       ),
@@ -122,7 +129,11 @@ export default function (api: IApi) {
           join(__dirname, 'PanelTabs', 'PanelTabHook.ts.tpl'),
           'utf-8',
         ),
+        {
+          useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
+        },
         {},
+        ['{{{', '}}}'],
       ),
     });
     api.writeTmpFile({
@@ -134,6 +145,7 @@ export default function (api: IApi) {
         ),
         {
           ...api.config.panelTab,
+          useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
         },
         {},
         ['{{{', '}}}'],
@@ -146,7 +158,11 @@ export default function (api: IApi) {
           join(__dirname, 'Wrappers', 'PanelTabsAndRouteAuthWrapper.tsx.tpl'),
           'utf-8',
         ),
+        {
+          useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
+        },
         {},
+        ['{{{', '}}}'],
       ),
     });
     api.writeTmpFile({
@@ -156,14 +172,22 @@ export default function (api: IApi) {
           join(__dirname, 'Wrappers', 'RouteAuthWrapper.tsx.tpl'),
           'utf-8',
         ),
+        {
+          useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
+        },
         {},
+        ['{{{', '}}}'],
       ),
     });
     api.writeTmpFile({
       path: 'plugin-panel-tabs/Result/404.tsx',
       content: utils.Mustache.render(
         readFileSync(join(__dirname, 'Result', '404.tsx.tpl'), 'utf-8'),
+        {
+          useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
+        },
         {},
+        ['{{{', '}}}'],
       ),
     });
   });
@@ -177,14 +201,19 @@ export default function (api: IApi) {
   if (!api.hasPlugins(['@umijs/plugin-antd'])) {
     registerPlugins.push(require.resolve('@umijs/plugin-antd'));
   }
+  if (
+    api.userConfig?.locale &&
+    api.userConfig.panelTab?.autoI18n &&
+    !api.hasPlugins(['@umijs/plugin-locale'])
+  ) {
+    registerPlugins.push(require.resolve('@umijs/plugin-locale'));
+  }
 
   if (registerPlugins.length > 0) {
     api.registerPlugins(registerPlugins);
   }
+
   return {
-    plugins: [
-      require.resolve('umi-plugin-keep-alive'),
-      require.resolve('@umijs/plugin-antd'),
-    ],
+    plugins: [...registerPlugins],
   };
 }
