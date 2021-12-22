@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import type { FC } from 'react';
 {{{ #useI18n }}}
 import { useIntl, useHistory } from 'umi';
@@ -21,6 +21,7 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
   {{{ #useI18n }}}
   const intl = useIntl();
   {{{ /useI18n }}}
+  const routeContext = useContext(RouteContext);
   const history = useHistory();
   const { getCachingNodes } = useAliveController();
   const cachingNodes = getCachingNodes();
@@ -51,12 +52,7 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
     <>
       <PanelTabs />
       <KeepAlive
-        {{{ #useI18n }}}
-        name={intl.formatMessage({id: `menu.${route.name}`, defaultMessage: route.name})}
-        {{{ /useI18n }}}
-        {{{ ^useI18n }}}
-        name={route.name}
-        {{{ /useI18n }}}
+        name={routeContext.currentMenu?.name}
         location={history.location}
         saveScrollPosition="screen"
       >
