@@ -201,6 +201,7 @@ export default function (api: IApi) {
   if (!api.hasPlugins(['@umijs/plugin-antd'])) {
     registerPlugins.push(require.resolve('@umijs/plugin-antd'));
   }
+
   if (
     api.userConfig?.locale &&
     api.userConfig.panelTab?.autoI18n &&
@@ -214,6 +215,9 @@ export default function (api: IApi) {
   }
 
   return {
-    plugins: [...registerPlugins],
+    plugins: [
+      require.resolve('umi-plugin-keep-alive'),
+      require.resolve('@umijs/plugin-antd'),
+    ],
   };
 }

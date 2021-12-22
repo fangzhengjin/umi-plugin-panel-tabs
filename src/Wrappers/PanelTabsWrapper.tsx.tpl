@@ -26,10 +26,18 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
   const cachingNodes = getCachingNodes();
   const useDebounce = useDebounceFn(
     () =>
+      {{{ #useI18n }}}
+      Modal.warn({
+        title: intl.formatMessage({id: 'panelTab.tabsLimitWarnTitle', defaultMessage: '{{{ tabsLimitWarnTitle }}}'}),
+        content: intl.formatMessage({id: 'panelTab.tabsLimitWarnContent', defaultMessage: '{{{ tabsLimitWarnContent }}}'}),
+      }),
+      {{{ /useI18n }}}
+      {{{ ^useI18n }}}
       Modal.warn({
         title: '{{{ tabsLimitWarnTitle }}}',
         content: '{{{ tabsLimitWarnContent }}}',
       }),
+      {{{ /useI18n }}}
     { wait: {{{ tabsLimitWait }}} },
   );
 
