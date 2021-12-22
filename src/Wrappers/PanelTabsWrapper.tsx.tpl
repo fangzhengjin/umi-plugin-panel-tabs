@@ -13,6 +13,7 @@ import type { IRoute } from '@umijs/core';
 import { Modal } from 'antd';
 import { useAliveController } from '@@/core/umiExports';
 import { useDebounceFn } from 'ahooks';
+import { RouteContext } from '@ant-design/pro-layout';
 
 const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
   route,
