@@ -55,7 +55,7 @@ export default defineConfig({
 
 1. 移除 route 中此路由配置的 name 属性
 2. 在该路由中配置属性`hideInPanelTab`, 将其设置为`true`, 此路由就不会在标签页中显示
-3. 如果开启了国际化, 下方路由的name即为国际化配置的key, 请按需配置, 未找到国际化配置默认显示中文(固定中文不可修改)
+3. 开启后路由里配置的菜单名会被当作菜单名国际化的 key，插件会去 locales 文件中查找 menu.[key]对应的文案，默认值为该 key, 配置可参照 [ant-design-pro 菜单国际化](https://pro.ant.design/zh-CN/docs/layout#%E8%8F%9C%E5%8D%95%E5%9B%BD%E9%99%85%E5%8C%96)
 
 ```js
 export default [
