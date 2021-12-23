@@ -2,6 +2,7 @@ import type { Settings as LayoutSettings } from '@ant-design/pro-layout';
 import { SettingDrawer } from '@ant-design/pro-layout';
 import { PageLoading } from '@ant-design/pro-layout';
 import type { RunTimeLayoutConfig } from 'umi';
+import type { RequestConfig } from '@@/plugin-request/request';
 import { history, Link } from 'umi';
 import RightContent from '@/components/RightContent';
 import Footer from '@/components/Footer';
@@ -103,4 +104,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     },
     ...initialState?.settings,
   };
+};
+
+export const request: RequestConfig = {
+  prefix: 'https://preview.pro.ant.design',
 };
