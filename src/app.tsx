@@ -107,5 +107,5 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
 };
 
 export const request: RequestConfig = {
-  prefix: 'https://preview.pro.ant.design',
+  prefix: 'https://proapi.azurewebsites.net',
 };
