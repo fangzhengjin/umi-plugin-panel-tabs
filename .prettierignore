@@ -1,8 +1,23 @@
-**/node_modules/**
+**/*.svg
 package.json
-
-# fixtures
-**/fixtures/**
-
-# templates
-**/templates/**
+.umi
+.umi-production
+/dist
+.dockerignore
+.DS_Store
+.eslintignore
+*.png
+*.toml
+docker
+.editorconfig
+Dockerfile*
+.gitignore
+.prettierignore
+LICENSE
+.eslintcache
+*.lock
+yarn-error.log
+.history
+CNAME
+/build
+/public
