@@ -1,6 +1,19 @@
 # umi-plugin-panel-tabs
 
-[![NPM version](https://img.shields.io/npm/v/umi-plugin-panel-tabs.svg?style=flat)](https://npmjs.org/package/umi-plugin-panel-tabs) [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-panel-tabs.svg?style=flat)](https://npmjs.org/package/umi-plugin-panel-tabs)
+[![NPM version](https://img.shields.io/npm/v/umi-plugin-panel-tabs.svg?style=flat)](https://npmjs.org/package/umi-plugin-panel-tabs)
+[![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-panel-tabs.svg?style=flat)](https://npmjs.org/package/umi-plugin-panel-tabs)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/10453ec4-945e-41c7-844e-4e7e6a2027b2/deploy-status)](https://app.netlify.com/sites/vibrant-leakey-d5b34a/deploys)
+
+## 演示地址
+
+[效果预览](https://vibrant-leakey-d5b34a.netlify.app/)
+
+![image](https://user-images.githubusercontent.com/12680972/147438313-e73a3148-1bc0-438a-9e6f-28d1bad8a25a.png)
+
+![image](https://user-images.githubusercontent.com/12680972/147438343-a1999972-cd47-4959-8fb7-5ecbaa523ca3.png)
+
+![image](https://user-images.githubusercontent.com/12680972/147438276-7cf13dad-1145-416b-a441-6d9bc3305431.png)
+
 
 ## 如何使用
 
