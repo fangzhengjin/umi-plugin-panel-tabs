@@ -112,7 +112,7 @@ Q: 配置后标签栏位置出现了偏移
 
 A: 请在app.tsx的layout方法中添加 `disableContentMargin: true` 配置
 
-Q: 需要手动控制缓存?
+Q: 需要自定义控制缓存?
 
 A: 请参阅依赖 [umi-plugin-keep-alive](https://github.com/alitajs/umi-plugin-keep-alive) 与 [react-activation](https://github.com/CJY0208/react-activation)
 
