@@ -81,11 +81,40 @@ export default [
   },
 ];
 ```
+
+## 自定义场景使用
+提供了hook方便在其他组件中使用
+```tsx
+import { Button, Result } from 'antd';
+import React from 'react';
+import { usePanelTab } from 'umi';
+
+export default () => {
+  const { close, closeCurrent, closeOther, refresh, refreshCurrent, closeAll } = usePanelTab();
+  return (
+    <Result
+      status="404"
+      title="404"
+      subTitle="抱歉，您访问的页面不存在。"
+      extra={
+        <Button type="primary" onClick={closeCurrent}>
+          关闭页面
+        </Button>
+      }
+    />
+  );
+};
+```
+
 ## 常见问题
 
 Q: 配置后标签栏位置出现了偏移
 
 A: 请在app.tsx的layout方法中添加 `disableContentMargin: true` 配置
+
+Q: 需要进行更底层的控制?
+
+A: 请参阅依赖 [umi-plugin-keep-alive](https://github.com/alitajs/umi-plugin-keep-alive) 与 [react-activation](https://github.com/CJY0208/react-activation)
 
 ## LICENSE
 
