@@ -44,8 +44,8 @@ export default defineConfig({
 | autoI18n             | boolean | true                       | 自动开启国际化, 仅当ant-design-pro的locale不为false且不为空时生效 |
 | tabsLimit            | number  | 10                         | 用户打开多少页签时弹出提示                                  |
 | tabsLimitWait        | number  | 500                        | 页签数量检查防抖时间, 如果一次弹出了多个提示框, 可以适当延长此时间, 单位毫秒      |
-| tabsLimitWarnTitle   | string  | 提示                         | [国际化配置优先] 页签数量超限弹窗的标题                          |
-| tabsLimitWarnContent | string  | 您当前打开页面过多, 请关闭不使用的页面以减少卡顿! | [国际化配置优先] 页签数量超限弹窗的内容                          |
+| tabsLimitWarnTitle   | string  | 提示                         | [配置国际化后此项不生效] 页签数量超限弹窗的标题                          |
+| tabsLimitWarnContent | string  | 您当前打开页面过多, 请关闭不使用的页面以减少卡顿! | [配置国际化后此项不生效] 页签数量超限弹窗的内容                          |
 
 ## 国际化配置项
 
