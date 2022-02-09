@@ -4,9 +4,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/umi-plugin-panel-tabs.svg?style=flat)](https://npmjs.org/package/umi-plugin-panel-tabs)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/10453ec4-945e-41c7-844e-4e7e6a2027b2/deploy-status)](https://app.netlify.com/sites/vibrant-leakey-d5b34a/deploys)
 
-## 演示地址
-
-[效果预览](https://vibrant-leakey-d5b34a.netlify.app/)
+## 演示地址 [https://vibrant-leakey-d5b34a.netlify.app]
 
 ![image](https://user-images.githubusercontent.com/12680972/147438313-e73a3148-1bc0-438a-9e6f-28d1bad8a25a.png)
 
@@ -107,6 +105,10 @@ export default () => {
 ```
 
 ## 常见问题
+
+Q: 有示例代码吗?
+
+A: 演示代码在 [demo分支](https://github.com/fangzhengjin/umi-plugin-panel-tabs/tree/demo)
 
 Q: 配置后标签栏位置出现了偏移
 
