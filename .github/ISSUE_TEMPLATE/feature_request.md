@@ -1,0 +1,26 @@
+---
+name: Feature request
+about: Suggest an idea for this project
+title: "[Feature]"
+labels: enhancement
+assignees: ''
+
+---
+
+### 需求描述
+
+<!--
+详细地描述需求，让大家都能理解
+-->
+
+### 解决方案
+
+<!--
+如果你有解决方案，在这里清晰地阐述
+-->
+
+### 其他信息
+
+<!--
+如截图等其他信息可以贴在这里
+-->
