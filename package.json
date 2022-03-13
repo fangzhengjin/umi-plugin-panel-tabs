@@ -18,22 +18,22 @@
     ]
   },
   "dependencies": {
-    "@ant-design/pro-layout": "^6.29.1",
-    "@umijs/plugin-antd": "^0.12.1",
-    "ahooks": "^2.10.12",
+    "@ant-design/pro-layout": "^6.34.1",
+    "@umijs/plugin-antd": "^0.15.0",
+    "ahooks": "^3.1.13",
     "path": "^0.12.7",
-    "umi-plugin-keep-alive": "^0.0.1-beta.29"
+    "umi-plugin-keep-alive": "^0.0.1-beta.30"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@umijs/plugin-locale": "^0.15.1",
+    "@types/node": "^17.0.21",
+    "@umijs/plugin-locale": "^0.15.2",
     "babel-plugin-import": "^1.13.3",
     "cross-env": "^7.0.3",
-    "father-build": "^1.20.1",
+    "father-build": "^1.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "typescript": "^4.4.4",
-    "umi": "^3.5.20"
+    "typescript": "^4.6.2",
+    "umi": "^3.5.21"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -41,5 +41,5 @@
   "files": [
     "lib"
   ],
-  "version": "0.0.18"
+  "version": "0.0.19"
 }
