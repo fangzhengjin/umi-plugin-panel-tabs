@@ -1,10 +1,9 @@
 ---
 name: Bug report
 about: Tell us about a problem you are experiencing
-title: "[Bug]"
+title: '[Bug]'
 labels: bug
 assignees: ''
-
 ---
 
 ### bug 描述

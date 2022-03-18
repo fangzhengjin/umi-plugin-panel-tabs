@@ -41,14 +41,14 @@
     classnames "^2.2.6"
     rc-util "^5.9.4"
 
-"@ant-design/pro-layout@^6.34.1":
-  version "6.34.1"
-  resolved "https://registry.npmmirror.com/@ant-design/pro-layout/-/pro-layout-6.34.1.tgz#8e92e2707f760e23d0928c5273f9d8d0c8a57a7a"
-  integrity sha512-obHt8Ckb2R0KOGsT+ENJf/kUbQuvQBYSqVlu2O/RY2JW/DY97m3arQHxw3kMyyRJzkbh0TWIKJR3EPn3rkuV3Q==
+"@ant-design/pro-layout@^6.34.5":
+  version "6.34.5"
+  resolved "https://registry.npmmirror.com/@ant-design/pro-layout/-/pro-layout-6.34.5.tgz#96ed6bd3b16caea11f50f8874d7504544e8143ef"
+  integrity sha512-PdQOOwBWFEb0I5MOhcFv5SALLRjgcj1SiOpYBCUW74gIPBDOvyCjljIweE+R/E+PC0cr14ZF2Ou3m7dTxhnuFg==
   dependencies:
     "@ant-design/icons" "^4.0.0"
-    "@ant-design/pro-provider" "1.6.0"
-    "@ant-design/pro-utils" "1.35.3"
+    "@ant-design/pro-provider" "1.6.1"
+    "@ant-design/pro-utils" "1.37.1"
     "@babel/runtime" "^7.16.3"
     "@umijs/route-utils" "^2.0.1"
     "@umijs/ssr-darkreader" "^4.9.44"
@@ -65,22 +65,22 @@
     use-media-antd-query "^1.0.6"
     warning "^4.0.3"
 
-"@ant-design/pro-provider@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.npmmirror.com/@ant-design/pro-provider/-/pro-provider-1.6.0.tgz#b8ac258aa12b3430a9b1da88a0751b1223c41a62"
-  integrity sha512-xq5GRfoYvwimSCWYZ6NyBaSfVz3ajEDIhMrTHpmzWmDGxRaPPFMS3Fio0cuAdU/KbDlZ1d0M8LuAvyEPvhYDFQ==
+"@ant-design/pro-provider@1.6.1":
+  version "1.6.1"
+  resolved "https://registry.npmmirror.com/@ant-design/pro-provider/-/pro-provider-1.6.1.tgz#b8e63d33efc54e8dbcfc8c03420cdee073ee5ada"
+  integrity sha512-kB9qx8YPfkbs0v+4XFmyRLJh8wfHsB9t0olDzsFViIKH795gkVA5617zxCarAAvqTfQX6Uj0qL12JOnsJDb7WQ==
   dependencies:
     "@babel/runtime" "^7.16.3"
     rc-util "^5.0.1"
     swr "^1.2.0"
 
-"@ant-design/pro-utils@1.35.3":
-  version "1.35.3"
-  resolved "https://registry.npmmirror.com/@ant-design/pro-utils/-/pro-utils-1.35.3.tgz#cdd68cfb805b04204e13c15fa1b8ea814a3f78f9"
-  integrity sha512-o67F2G01VL6nmDH6VhS/umSlvwo+2g9dotqhWJyvj64JLUuYLdiiXNYsCnvRUqvJrmgmSOXaq8jtTnU1QXso/g==
+"@ant-design/pro-utils@1.37.1":
+  version "1.37.1"
+  resolved "https://registry.npmmirror.com/@ant-design/pro-utils/-/pro-utils-1.37.1.tgz#6d62d0ac3b2d209b29eb8421642ca1ce8799c3b9"
+  integrity sha512-cjuflmF8ZIx0wUZllMgM9Lw6qncSCCtek3rM8ILKFQSyXob0+NTDrfXgzkjRAnZVaAup8BFAHuVPraFNsef3yw==
   dependencies:
     "@ant-design/icons" "^4.3.0"
-    "@ant-design/pro-provider" "1.6.0"
+    "@ant-design/pro-provider" "1.6.1"
     "@babel/runtime" "^7.16.3"
     classnames "^2.2.6"
     moment "^2.27.0"
@@ -3852,10 +3852,10 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-father-build@^1.21.1:
-  version "1.21.1"
-  resolved "https://registry.npmmirror.com/father-build/-/father-build-1.21.1.tgz#67ead16b54a9b004e2f638b24aa1e84411ef51ea"
-  integrity sha512-muAaVmqjmkz1ekZT3wyTGjq6veGigmPHz7MdX8eK2dl3tCSFqYXWa2H35eCM5Iy6D+MN3bKFciKYZZ7yiQmn7w==
+father-build@^1.21.2:
+  version "1.21.2"
+  resolved "https://registry.npmmirror.com/father-build/-/father-build-1.21.2.tgz#6de081d04d38a306b7c26e53a4a3fbe108f2f202"
+  integrity sha512-Vlc087xTe24/y9hp7dibT+6tWTilh+XWWtwherLg04uWvHmLdCS9PtU7eH2PMoQZS0skNwiLX8zmbuHFZaSASg==
   dependencies:
     "@babel/core" "7.12.3"
     "@babel/plugin-proposal-class-properties" "7.12.1"

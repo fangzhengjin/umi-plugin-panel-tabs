@@ -1,10 +1,9 @@
 ---
 name: question
 about: I want to ask a question.
-title: "[Question]"
+title: '[Question]'
 labels: question
 assignees: ''
-
 ---
 
 ### 问题描述
