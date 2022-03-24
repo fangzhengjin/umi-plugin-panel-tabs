@@ -53,7 +53,12 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
     <>
       <PanelTabs />
       <KeepAlive
+        {{{ #useI18n }}}
         name={intl.formatMessage({ id: routeContext.currentMenu?.locale, defaultMessage: routeContext.currentMenu?.name })}
+        {{{ /useI18n }}}
+        {{{ ^useI18n }}}
+        {routeContext.currentMenu?.name}
+        {{{ /useI18n }}}
         location={history.location}
         saveScrollPosition="screen"
       >
