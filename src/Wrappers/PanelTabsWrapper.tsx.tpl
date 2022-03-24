@@ -57,7 +57,7 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
         name={intl.formatMessage({ id: routeContext.currentMenu?.locale, defaultMessage: routeContext.currentMenu?.name })}
         {{{ /useI18n }}}
         {{{ ^useI18n }}}
-        {routeContext.currentMenu?.name}
+        name={routeContext.currentMenu?.name}
         {{{ /useI18n }}}
         location={history.location}
         saveScrollPosition="screen"
