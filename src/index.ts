@@ -54,7 +54,7 @@ export default function (api: IApi) {
       default: {
         use404: true,
         useAuth: false,
-        autoI18n: true,
+        autoI18n: false,
         tabsLimit: 10,
         tabsLimitWait: 500,
         tabsLimitWarnTitle: '提示',

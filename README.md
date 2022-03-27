@@ -36,7 +36,7 @@ export default defineConfig({
 | --- | --- | --- | --- |
 | use404 | boolean | true | 使用内置的 404 页面, 该页面会在 tab 中显示 |
 | useAuth | boolean | false | 使用内置的 403 页面, 加载内置的权限判断 wrapper, 该页面会在 tab 中显示 |
-| autoI18n | boolean | true | 自动开启国际化, 仅当 ant-design-pro 的 locale 不为 false 且不为空时生效 |
+| autoI18n | boolean | false (0.0.23 之前的版本起默认 true) | 自动开启国际化, 仅当 ant-design-pro 的 locale 不为 false 且不为空时生效 |
 | tabsLimit | number | 10 | 用户打开多少页签时弹出提示 |
 | tabsLimitWait | number | 500 | 页签数量检查防抖时间, 如果一次弹出了多个提示框, 可以适当延长此时间, 单位毫秒 |
 | tabsLimitWarnTitle | string | 提示 | [配置国际化后此项不生效] 页签数量超限弹窗的标题 |
