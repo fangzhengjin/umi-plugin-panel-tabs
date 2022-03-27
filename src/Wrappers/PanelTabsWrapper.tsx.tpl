@@ -56,7 +56,7 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
         {{{ /useI18n }}}
         {{{ ^useI18n }}}
         name={route.name}
-        {{{ /useI18n }}}f
+        {{{ /useI18n }}}
         location={history.location}
         saveScrollPosition="screen"
       >
