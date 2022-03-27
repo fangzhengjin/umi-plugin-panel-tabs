@@ -13,7 +13,6 @@ import type { IRoute } from '@umijs/core';
 import { Modal } from 'antd';
 import { useAliveController } from '@@/core/umiExports';
 import { useDebounceFn } from 'ahooks';
-import { RouteContext } from '@ant-design/pro-layout';
 
 const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
   route,
@@ -22,7 +21,6 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
   {{{ #useI18n }}}
   const intl = useIntl();
   {{{ /useI18n }}}
-  const routeContext = useContext(RouteContext);
   const history = useHistory();
   const { getCachingNodes } = useAliveController();
   const cachingNodes = getCachingNodes();
@@ -54,11 +52,11 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
       <PanelTabs />
       <KeepAlive
         {{{ #useI18n }}}
-        name={intl.formatMessage({ id: routeContext.currentMenu?.locale || route.name, defaultMessage: routeContext.currentMenu?.name || route.name })}
+        name={intl.formatMessage({ id: `menu.${route.name}`, defaultMessage: route.name })}
         {{{ /useI18n }}}
         {{{ ^useI18n }}}
-        name={routeContext.currentMenu?.name || route.name}
-        {{{ /useI18n }}}
+        name={route.name}
+        {{{ /useI18n }}}f
         location={history.location}
         saveScrollPosition="screen"
       >
