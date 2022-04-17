@@ -52,7 +52,7 @@ const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({
       <PanelTabs />
       <KeepAlive
         {{{ #useI18n }}}
-        name={intl.formatMessage({ id: `menu.${route.name}`, defaultMessage: route.name })}
+        name={intl.formatMessage({ id: route.intlMenuKey, defaultMessage: route.name })}
         {{{ /useI18n }}}
         {{{ ^useI18n }}}
         name={route.name}

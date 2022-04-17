@@ -26,9 +26,11 @@ const modifyRoutes = (
   topRoute: boolean,
   use404: boolean,
   useAuth: boolean,
+  intlMenuKey: string,
 ) => {
   routes.forEach((x) => {
     if (x.hideInPanelTab !== true && x.name) {
+      x.intlMenuKey = `${intlMenuKey}.${x.name}`;
       if (x.wrappers && x.wrappers.length > 0) {
         x.wrappers.push(...generatorWrappers(useAuth));
       } else {
@@ -36,7 +38,13 @@ const modifyRoutes = (
       }
     }
     if (x.routes) {
-      x.routes = modifyRoutes(x.routes, false, use404, useAuth);
+      x.routes = modifyRoutes(
+        x.routes,
+        false,
+        use404,
+        useAuth,
+        x.intlMenuKey || intlMenuKey,
+      );
     }
   });
   if (!topRoute) {
@@ -83,6 +91,7 @@ export default function (api: IApi) {
       true,
       api.config.panelTab.use404,
       api.config.panelTab.useAuth,
+      'menu',
     ),
   );
   api.addUmiExports(() => [

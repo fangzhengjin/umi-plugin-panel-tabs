@@ -18,22 +18,18 @@
     ]
   },
   "dependencies": {
-    "@ant-design/pro-layout": "^6.34.5",
-    "@umijs/plugin-antd": "^0.15.0",
-    "ahooks": "^3.1.13",
-    "path": "^0.12.7",
+    "@umijs/plugin-access": "^2.5.0",
+    "@umijs/plugin-locale": "^0.15.2",
+    "antd": "^4.19.5",
+    "umi": "^3.5.21",
     "umi-plugin-keep-alive": "^0.0.1-beta.30"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@umijs/plugin-locale": "^0.15.2",
-    "babel-plugin-import": "^1.13.3",
-    "cross-env": "^7.0.3",
+    "babel-plugin-import": "^1.13.5",
     "father-build": "^1.21.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "typescript": "^4.6.2",
-    "umi": "^3.5.21"
+    "typescript": "^4.6.2"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
