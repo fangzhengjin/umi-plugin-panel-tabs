@@ -111,21 +111,7 @@ export default () => {
 
 ## 常见问题
 
-Q: 有示例代码吗?
-
-A: 演示代码在 [demo 分支](https://github.com/fangzhengjin/umi-plugin-panel-tabs/tree/demo)
-
-Q: 配置后标签栏位置出现了偏移
-
-A: 请在 app.tsx 的 layout 方法中添加 `disableContentMargin: true` 配置
-
-Q: 登录页出现了标签页怎么办？
-
-A: 登录页不要在路由写 name, 有 name 就有标签页，或者在 name 下方再加一个配置，hideInPanelTab: true,也可以在标签中隐藏
-
-Q: 需要自定义控制缓存?
-
-A: 请参阅依赖 [umi-plugin-keep-alive](https://github.com/alitajs/umi-plugin-keep-alive) 与 [react-activation](https://github.com/CJY0208/react-activation)
+看这里 -> https://github.com/fangzhengjin/umi-plugin-panel-tabs/issues/26
 
 ## LICENSE
 
