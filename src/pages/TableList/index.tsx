@@ -238,7 +238,7 @@ const TableList: React.FC = () => {
   ];
 
   return (
-    <PageContainer title={false} breadcrumb={undefined}>
+    <PageContainer>
       <ProTable<API.RuleListItem, API.PageParams>
         headerTitle={intl.formatMessage({
           id: 'pages.searchTable.title',

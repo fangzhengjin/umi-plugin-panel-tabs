@@ -4,24 +4,16 @@ import { Card, Typography, Alert } from 'antd';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import { useIntl } from 'umi';
 
-const Admin: React.FC = () => {
+export default (): React.ReactNode => {
   const intl = useIntl();
   return (
-    <PageHeaderWrapper title={false} breadcrumb={undefined}>
+    <PageHeaderWrapper
+      content={intl.formatMessage({
+        id: 'pages.admin.subPage.title',
+        defaultMessage: 'This page can only be viewed by admin',
+      })}
+    >
       <Card>
-        <Alert
-          message={intl.formatMessage({
-            id: 'pages.admin.subPage.title',
-            defaultMessage: 'This page can only be viewed by admin',
-          })}
-          type="info"
-          showIcon
-          banner
-          style={{
-            margin: -12,
-            marginBottom: 20,
-          }}
-        />
         <Alert
           message={intl.formatMessage({
             id: 'pages.welcome.alertMessage',
@@ -32,7 +24,7 @@ const Admin: React.FC = () => {
           banner
           style={{
             margin: -12,
-            marginBottom: 30,
+            marginBottom: 48,
           }}
         />
         <Typography.Title level={2} style={{ textAlign: 'center' }}>
@@ -49,5 +41,3 @@ const Admin: React.FC = () => {
     </PageHeaderWrapper>
   );
 };
-
-export default Admin;

@@ -1,7 +1,6 @@
 // https://umijs.org/config/
 import { defineConfig } from 'umi';
 import { join } from 'path';
-
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
@@ -38,7 +37,7 @@ export default defineConfig({
   routes,
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
   theme: {
-    'root-entry-name': 'variable',
+    'primary-color': defaultSettings.primaryColor,
   },
   // esbuild is father build tools
   // https://umijs.org/plugins/plugin-esbuild
@@ -65,12 +64,17 @@ export default defineConfig({
       projectName: 'swagger',
     },
   ],
-  nodeModulesTransform: { type: 'none' },
+  nodeModulesTransform: {
+    type: 'none',
+  },
   mfsu: {},
   webpack5: {},
   exportStatic: {},
+  // access: {},
   panelTab: {
     use404: true,
     useAuth: true,
-  }
+    autoI18n: true,
+  },
+  // plugins: [require.resolve('../lib')],
 });

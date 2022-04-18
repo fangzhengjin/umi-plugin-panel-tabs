@@ -12,11 +12,10 @@ const CodePreview: React.FC = ({ children }) => (
   </pre>
 );
 
-const Welcome: React.FC = () => {
+export default (): React.ReactNode => {
   const intl = useIntl();
-
   return (
-    <PageContainer title={false} breadcrumb={undefined}>
+    <PageContainer>
       <Card>
         <Alert
           message={intl.formatMessage({
@@ -62,5 +61,3 @@ const Welcome: React.FC = () => {
     </PageContainer>
   );
 };
-
-export default Welcome;
