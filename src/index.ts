@@ -63,6 +63,8 @@ export default function (api: IApi) {
         use404: true,
         useAuth: false,
         autoI18n: false,
+        tabsBarBackgroundColor: '#FFFFFF',
+        tabsTagColor: '#1890ff',
         tabsLimit: 10,
         tabsLimitWait: 500,
         tabsLimitWarnTitle: '提示',
@@ -74,6 +76,8 @@ export default function (api: IApi) {
           use404: joi.boolean(),
           useAuth: joi.boolean(),
           autoI18n: joi.boolean(),
+          tabsBarBackgroundColor: joi.string(),
+          tabsTagColor: joi.string(),
           tabsLimit: joi.number(),
           tabsLimitWait: joi.number(),
           tabsLimitWarnTitle: joi.string(),
@@ -113,7 +117,7 @@ export default function (api: IApi) {
       content: utils.Mustache.render(
         readFileSync(join(__dirname, 'PanelTabs', 'index.tsx.tpl'), 'utf-8'),
         {
-          // test: console.log(JSON.stringify(api)),
+          ...api.config.panelTab,
           useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
         },
         {},
@@ -125,6 +129,7 @@ export default function (api: IApi) {
       content: utils.Mustache.render(
         readFileSync(join(__dirname, 'PanelTabs', 'PanelTab.tsx.tpl'), 'utf-8'),
         {
+          ...api.config.panelTab,
           useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
         },
         {},

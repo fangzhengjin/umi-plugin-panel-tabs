@@ -28,19 +28,23 @@ export default defineConfig({
     tabsLimitWait: 500,
     tabsLimitWarnTitle: '提示',
     tabsLimitWarnContent: '您当前打开页面过多, 请关闭不使用的页面以减少卡顿!',
+    tabsBarBackgroundColor: '#FFFFFF',
+    tabsTagColor: '#1890ff',
   },
 });
 ```
 
-| 配置项 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| use404 | boolean | true | 使用内置的 404 页面, 该页面会在 tab 中显示 |
-| useAuth | boolean | false | 使用内置的 403 页面, 加载内置的权限判断 wrapper, 该页面会在 tab 中显示 |
-| autoI18n | boolean | false (**0.0.25**之前的版本默认为 true) | 自动开启国际化, 仅当 ant-design-pro 的 locale 不为 false 且不为空时生效 |
-| tabsLimit | number | 10 | 用户打开多少页签时弹出提示 |
-| tabsLimitWait | number | 500 | 页签数量检查防抖时间, 如果一次弹出了多个提示框, 可以适当延长此时间, 单位毫秒 |
-| tabsLimitWarnTitle | string | 提示 | [配置国际化后此项不生效] 页签数量超限弹窗的标题 |
-| tabsLimitWarnContent | string | 您当前打开页面过多, 请关闭不使用的页面以减少卡顿! | [配置国际化后此项不生效] 页签数量超限弹窗的内容 |
+| 配置项 | 类型 | 默认值 | 说明 | 版本 |
+| --- | --- | --- | --- | --- |
+| use404 | boolean | true | 使用内置的 404 页面, 该页面会在 tab 中显示 | - |
+| useAuth | boolean | false | 使用内置的 403 页面, 加载内置的权限判断 wrapper, 该页面会在 tab 中显示 | - |
+| autoI18n | boolean | false (**0.0.25**之前的版本默认为 true) | 自动开启国际化, 仅当 ant-design-pro 的 locale 不为 false 且不为空时生效 | - |
+| tabsLimit | number | 10 | 用户打开多少页签时弹出提示 | - |
+| tabsLimitWait | number | 500 | 页签数量检查防抖时间, 如果一次弹出了多个提示框, 可以适当延长此时间, 单位毫秒 | - |
+| tabsLimitWarnTitle | string | 提示 | [配置国际化后此项不生效] 页签数量超限弹窗的标题 | - |
+| tabsLimitWarnContent | string | 您当前打开页面过多, 请关闭不使用的页面以减少卡顿! | [配置国际化后此项不生效] 页签数量超限弹窗的内容 | - |
+| tabsBarBackgroundColor | string | #FFFFFF | 标签栏背景色 | 0.0.26 |
+| tabsTagColor | string | #1890ff | 标签颜色 | 0.0.26 |
 
 ## 国际化配置项
 

@@ -115,7 +115,7 @@ const PanelTab: React.FC<{ node: CachingNode }> = ({ node }) => {
           fontSize: '12px',
           cursor: 'default',
         }}
-        color={isActive ? '#1890ff' : 'default'}
+        color={isActive ? '{{{tabsTagColor}}}' : 'default'}
         onClick={() => history.push(node.location)}
         closable
         onClose={(e) => {
