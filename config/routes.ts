@@ -8,6 +8,7 @@
         routes: [
           {
             name: 'login',
+            hideInPanelTab: true,
             path: '/user/login',
             component: './user/Login',
           },
