@@ -20,6 +20,7 @@
   "dependencies": {
     "@umijs/plugin-access": "^2.5.0",
     "@umijs/plugin-locale": "^0.15.2",
+    "ahooks": "^3.3.10",
     "antd": "^4.19.5",
     "umi": "^3.5.21",
     "umi-plugin-keep-alive": "^0.0.1-beta.30"
@@ -37,5 +38,5 @@
   "files": [
     "lib"
   ],
-  "version": "0.0.26"
+  "version": "0.0.27"
 }

@@ -131,6 +131,8 @@ export default function (api: IApi) {
         {
           ...api.config.panelTab,
           useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
+          useAntPrimaryColor:
+            api.config.panelTab?.tabsTagColor?.startsWith('#') === true,
         },
         {},
         ['{{{', '}}}'],
