@@ -69,10 +69,10 @@ export default defineConfig({
   mfsu: {},
   webpack5: {},
   exportStatic: {},
-  // panelTab: {
-  //   use404: true,
-  //   useAuth: true,
-  //   autoI18n: true,
-  // },
+  panelTab: {
+    use404: true,
+    useAuth: true,
+    autoI18n: true,
+  },
   // plugins: [require.resolve('../lib')],
 });
