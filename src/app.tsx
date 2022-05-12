@@ -81,3 +81,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     ...initialState?.settings,
   };
 };
+
+export const request: RequestConfig = {
+  prefix: 'https://proapi.azurewebsites.net',
+};
