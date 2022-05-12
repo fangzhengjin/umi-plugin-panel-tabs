@@ -1,1 +1,1 @@
-/api            https://proapi.azurewebsites.net/api
+/api/*  https://proapi.azurewebsites.net/api/:splat  200
