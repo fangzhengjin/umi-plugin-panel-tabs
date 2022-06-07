@@ -116,7 +116,7 @@ const PanelTab: React.FC<{ node: CachingNode }> = ({ node }) => {
           cursor: 'default',
         }}
         {{{ #useAntPrimaryColor }}}
-        color={isActive ? 'var(--ant-primary-color)' : 'default'}
+        color={isActive ? 'var(--ant-primary-color, #1890ff)' : 'default'}
         {{{ /useAntPrimaryColor }}}
         {{{ ^useAntPrimaryColor }}}
         color={isActive ? '{{{tabsTagColor}}}' : 'default'}
