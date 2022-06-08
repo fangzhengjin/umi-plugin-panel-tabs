@@ -84,6 +84,17 @@ export default [
 
 提供了 hook 方便在其他组件中使用
 
+| 方法                            | 作用                                |
+| ------------------------------- | ----------------------------------- |
+| close                           | 关闭指定标签                        |
+| closeCurrent                    | 关闭当前激活的标签                  |
+| closeOther                      | 关闭除当前激活外其他标签            |
+| refresh                         | 刷新指定标签                        |
+| refreshCurrent                  | 刷新当前标签                        |
+| closeAll                        | 关闭所有                            |
+| refreshAndCloseCurrent          | 关闭当前标签时,刷新指定标签         |
+| refreshAndCloseCurrentAndSwitch | 关闭当前标签时,刷新并切换到指定标签 |
+
 ```tsx
 import { Button, Result } from 'antd';
 import React from 'react';
@@ -97,6 +108,8 @@ export default () => {
     refresh,
     refreshCurrent,
     closeAll,
+    refreshAndCloseCurrent,
+    refreshAndCloseCurrentAndSwitch,
   } = usePanelTab();
   return (
     <Result
