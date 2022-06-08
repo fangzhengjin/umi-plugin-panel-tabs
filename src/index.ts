@@ -132,7 +132,8 @@ export default function (api: IApi) {
           ...api.config.panelTab,
           useI18n: api.userConfig?.locale && api.config.panelTab?.autoI18n,
           useAntPrimaryColor:
-            api.config.panelTab?.tabsTagColor?.startsWith('#') === true,
+            // 如果没配置标签颜色，则使用主题色
+            api.config.panelTab?.tabsTagColor?.startsWith('#') !== true,
         },
         {},
         ['{{{', '}}}'],
