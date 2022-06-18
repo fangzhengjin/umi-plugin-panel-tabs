@@ -44,7 +44,7 @@ export default defineConfig({
 | tabsLimitWarnTitle | string | 提示 | [配置国际化后此项不生效] 页签数量超限弹窗的标题 | - |
 | tabsLimitWarnContent | string | 您当前打开页面过多, 请关闭不使用的页面以减少卡顿! | [配置国际化后此项不生效] 页签数量超限弹窗的内容 | - |
 | tabsBarBackgroundColor | string | #FFFFFF | 标签栏背景色 | 0.0.26 |
-| tabsTagColor | string | #1890ff | 标签颜色 | 0.0.26 |
+| tabsTagColor | string | #1890ff | 标签颜色,**优先级高于自动使用主题色** | 0.0.26 |
 
 ## 国际化配置项
 
