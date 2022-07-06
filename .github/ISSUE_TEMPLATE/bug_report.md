@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Tell us about a problem you are experiencing
-title: '[Bug]'
+title: '[Bug]不提供复现代码95%超高几率不回复🤔'
 labels: bug
 assignees: ''
 ---
