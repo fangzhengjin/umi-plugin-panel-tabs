@@ -110,6 +110,44 @@ const usePanelTab = () => {
     closeCurrent();
     config.callback(history);
   };
+  
+   /**
+   * 刷新并打开指定页面
+   * @param node 
+   */
+  const refreshAndOpen = (node: Location) => {
+    const current = cachingNodes
+    .filter((x) => {
+      if (node) {
+        // 刷新指定页面
+        return x.location.pathname === node.pathname;
+      }
+    })
+    ?.pop();
+    if(current) {
+      refreshScope(current.name!!);
+    }
+    history.push(node.pathname);
+  }
+  
+    /**
+   * 重置打开指定页面
+   * @param node 
+   */
+  const closeAndOpen = (node: Location) => {
+    const current = cachingNodes
+    .filter((x) => {
+      if (node) {
+        // 关闭指定页面
+        return x.location.pathname === node.pathname;
+      }
+    })
+    ?.pop();
+    if(current) {
+      dropScope(current.name!!); //這個功能無效？
+    }
+    history.push(node.pathname);
+  }
 
   return {
     close,
@@ -120,6 +158,9 @@ const usePanelTab = () => {
     closeAll,
     refreshAndCloseCurrent,
     refreshAndCloseCurrentAndSwitch,
+    
+    refreshAndOpen,
+    closeAndOpen
   };
 };
 
