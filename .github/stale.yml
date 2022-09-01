@@ -6,7 +6,7 @@ daysUntilClose: 7
 exemptLabels:
   - pinned
   - enhancement
-  - todo 🗒️
+  - todo :spiral_notepad:
 staleLabel: stale
 # Comment to post when marking an issue as stale. Set to `false` to disable
 markComment: >
