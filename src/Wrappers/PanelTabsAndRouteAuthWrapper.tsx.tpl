@@ -2,7 +2,7 @@ import React from 'react';
 import type { FC } from 'react';
 import { useAccess } from '@@/plugin-access/access';
 import type { IBestAFSRoute } from '@umijs/plugin-layout';
-import { PanelTabsWrapper } from '@@/plugin-panel-tabs';
+import { PanelTabsWrapper } from '@@/{{{ pluginDir }}}';
 import { Button, Result } from 'antd';
 {{{ #useI18n }}}
 import { useIntl, usePanelTab } from 'umi';

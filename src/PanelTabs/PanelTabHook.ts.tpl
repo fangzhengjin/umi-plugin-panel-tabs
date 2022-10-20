@@ -1,6 +1,10 @@
 import { useHistory, useLocation, History } from 'umi';
 // @ts-ignore
 import { useAliveController } from 'react-activation';
+import { Modal } from 'antd';
+{{{ #useI18n }}}
+import { useIntl } from 'umi';
+{{{ /useI18n }}}
 
 interface PanelTabNodeProps {
   name: string;
@@ -11,6 +15,9 @@ interface PanelTabNodeProps {
  * PanelTab操作hook
  */
 const usePanelTab = () => {
+  {{{ #useI18n }}}
+  const intl = useIntl();
+  {{{ /useI18n }}}
   const history = useHistory();
   const location = useLocation();
   const { getCachingNodes, dropScope, refreshScope, clear } = useAliveController();
@@ -67,8 +74,27 @@ const usePanelTab = () => {
    * 关闭所有tab并打开欢迎页
    */
   const closeAll = () => {
-    history.push('/welcome');
-    clear();
+    {{{ #closeAllConfirm }}}
+    Modal.confirm({
+      {{{ #useI18n }}}
+      title: intl.formatMessage({id: 'panelTab.closeAllConfirmTitle', defaultMessage: '{{{ closeAllConfirmTitle }}}'}),
+      content: intl.formatMessage({id: 'panelTab.closeAllConfirmContent', defaultMessage: '{{{ closeAllConfirmContent }}}'}),
+      {{{ /useI18n }}}
+      {{{ ^useI18n }}}
+      title: '{{{ closeAllConfirmTitle }}}',
+      content: '{{{ closeAllConfirmContent }}}',
+      {{{ /useI18n }}}
+      maskClosable: true,
+      onOk: () => {
+      {{{ /closeAllConfirm }}}
+
+        history.push('/welcome');
+        clear();
+
+    {{{ #closeAllConfirm }}}
+      },
+    });
+    {{{ /closeAllConfirm }}}
   };
 
   /**
@@ -110,10 +136,10 @@ const usePanelTab = () => {
     closeCurrent();
     config.callback(history);
   };
-  
+
    /**
    * 刷新并打开指定页面
-   * @param node 
+   * @param node
    */
   const refreshAndOpen = (node: Location) => {
     const current = cachingNodes
@@ -129,10 +155,10 @@ const usePanelTab = () => {
     }
     history.push(node.pathname);
   }
-  
+
     /**
    * 重置打开指定页面
-   * @param node 
+   * @param node
    */
   const closeAndOpen = (node: Location) => {
     const current = cachingNodes
@@ -158,7 +184,7 @@ const usePanelTab = () => {
     closeAll,
     refreshAndCloseCurrent,
     refreshAndCloseCurrentAndSwitch,
-    
+
     refreshAndOpen,
     closeAndOpen
   };

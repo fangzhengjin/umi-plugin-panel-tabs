@@ -6,12 +6,12 @@ import { useIntl, useHistory } from 'umi';
 {{{ ^useI18n }}}
 import { useHistory } from 'umi';
 {{{ /useI18n }}}
-import PanelTabs from '@@/plugin-panel-tabs/PanelTabs';
+import PanelTabs from '@@/{{{ pluginDir }}}/PanelTabs';
 // @ts-ignore
 import { KeepAlive } from 'react-activation';
 import type { IRoute } from '@umijs/core';
 import { Modal } from 'antd';
-import { useAliveController } from '@@/core/umiExports';
+import { useAliveController } from 'umi';
 import { useDebounceFn } from 'ahooks';
 
 const PanelTabsWrapper: FC<{ route: IRoute; children: React.ReactNode }> = ({

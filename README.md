@@ -30,6 +30,9 @@ export default defineConfig({
     tabsLimitWarnContent: '您当前打开页面过多, 请关闭不使用的页面以减少卡顿!',
     tabsBarBackgroundColor: '#FFFFFF',
     tabsTagColor: '#1890ff',
+    closeAllConfirm: false,
+    closeAllConfirmTitle: '提示',
+    closeAllConfirmContent: '确认要关闭所有标签吗?',
   },
 });
 ```
@@ -43,8 +46,11 @@ export default defineConfig({
 | tabsLimitWait | number | 500 | 页签数量检查防抖时间, 如果一次弹出了多个提示框, 可以适当延长此时间, 单位毫秒 | - |
 | tabsLimitWarnTitle | string | 提示 | [配置国际化后此项不生效] 页签数量超限弹窗的标题 | - |
 | tabsLimitWarnContent | string | 您当前打开页面过多, 请关闭不使用的页面以减少卡顿! | [配置国际化后此项不生效] 页签数量超限弹窗的内容 | - |
-| tabsBarBackgroundColor | string | #FFFFFF | 标签栏背景色 | 0.0.26 |
-| tabsTagColor | string | #1890ff | 标签颜色,**优先级高于自动使用主题色** | 0.0.26 |
+| tabsBarBackgroundColor | string | #FFFFFF | 标签栏背景色 | 0.0.26+ |
+| tabsTagColor | string | #1890ff | 标签颜色,**优先级高于自动使用主题色** | 0.0.26+ |
+| closeAllConfirm | boolean | false | 操作关闭所有标签是否弹出确认框 | 0.0.29+ |
+| closeAllConfirmTitle | string | 提示 | [配置国际化后此项不生效] 关闭所有标签弹窗的标题 | 0.0.29+ |
+| closeAllConfirmContent | string | 确认要关闭所有标签吗? | [配置国际化后此项不生效] 关闭所有标签弹窗的内容 | 0.0.29+ |
 
 ## 国际化配置项
 
@@ -59,6 +65,8 @@ export default defineConfig({
 | panelTab.refresh | 刷新 |
 | panelTab.tabsLimitWarnTitle | 提示 |
 | panelTab.tabsLimitWarnContent | 您当前打开页面过多, 请关闭不使用的页面以减少卡顿! |
+| panelTab.closeAllConfirmTitle | 提示 |
+| panelTab.closeAllConfirmContent | 确认要关闭所有标签吗? |
 
 ## 额外的配置项
 
